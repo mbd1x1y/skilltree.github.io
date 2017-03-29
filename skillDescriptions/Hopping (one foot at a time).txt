@@ -1,0 +1,8 @@
+Able to hop over an obstacle at least 6 inches high. Jump from one foot and land on the other.
+
+Weight should remain forward, so that loss of control upon landing results in a forward fall. Landing with straight legs and an upright back is dangerous.
+
+#R1B
+#Balance
+#Agility
+#Jumps

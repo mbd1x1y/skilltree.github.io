@@ -294,7 +294,7 @@ Knee Taps<y:LabelModel>
           </data>
           <graph edgedefault="directed" id="n0::n2:">
             <node id="n0::n2::n0">
-              <data key="d4"><![CDATA[C:\Users\shenck\Downloads\Derby\Hopping (one foot at a time).txt]]></data>
+              <data key="d4"><![CDATA[skillDescriptions/Hopping (one foot at a time).txt]]></data>
               <data key="d5"><![CDATA[Able to hop over an obstacle at least 6 inches high. Jump from one foot and land on the other.
 
 Weight should remain forward, so that loss of control upon landing results in a forward fall. Landing with straight legs and an upright back is dangerous.]]></data>
@@ -891,7 +891,6 @@ ladder work<y:LabelModel>
         </node>
         <node id="n0::n9" yfiles.foldertype="group">
           <data key="d4"/>
-          <data key="d5"/>
           <data key="d6">
             <y:ProxyAutoBoundsNode>
               <y:Realizers active="0">
