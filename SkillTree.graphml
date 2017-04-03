@@ -294,9 +294,8 @@ Knee Taps<y:LabelModel>
           </data>
           <graph edgedefault="directed" id="n0::n2:">
             <node id="n0::n2::n0">
-              <data key="d4"><![CDATA[C:\Users\shenck\Documents\GitHub\SkillTree.github.io\skillDescriptions\Hopping.html]]></data>
+              <data key="d4"><![CDATA[.\skillDescriptions\Hopping.html]]></data>
               <data key="d5"><![CDATA[Able to hop over an obstacle at least 6 inches high. Jump from one foot and land on the other.
-
 Weight should remain forward, so that loss of control upon landing results in a forward fall. Landing with straight legs and an upright back is dangerous.]]></data>
               <data key="d6">
                 <y:ShapeNode>
@@ -342,7 +341,7 @@ feet together)<y:LabelModel>
               </data>
             </node>
             <node id="n0::n2::n2">
-              <data key="d4"><![CDATA[C:\Users\shenck\Documents\GitHub\SkillTree.github.io\skillDescriptions\Lateral Hopping.html]]></data>
+              <data key="d4"><![CDATA[.\skillDescriptions\Lateral Hopping.html]]></data>
               <data key="d6">
                 <y:ShapeNode>
                   <y:Geometry height="38.701171875" width="108.72656250000011" x="1068.9652901785714" y="-1331.9599609375"/>
@@ -857,7 +856,7 @@ ladder work<y:LabelModel>
           </data>
         </node>
         <node id="n0::n7">
-          <data key="d4"><![CDATA[C:\Users\shenck\Documents\GitHub\SkillTree.github.io\skillDescriptions\Plate Control.html]]></data>
+          <data key="d4"><![CDATA[.\skillDescriptions\Plate Control.html]]></data>
           <data key="d5"><![CDATA[Much like "Learning your Edges" and other things that you may hear throughout training, but combined with the acknowledgement that you also need to learn about your skates and how to adjust your trucks.
 Think about only one skate right now. A roller skate functions just like a skateboard, which is . When you lean you weight to one side, the skate should turn in that direction. This is because the trucks on the plate will flex, and the wheels will turn, causing the skate to turn. If your trucks are too tight, there will be no flex when you lean your weight. This will make all skills that involve turning (pretty much EVERYTHING) very difficult. On the flip side, having your trucks too loose will make you feel out of control (especially at high speed).
 Click the node for more information.]]></data>
@@ -1267,6 +1266,7 @@ One-foot glides<y:LabelModel>
           </data>
         </node>
         <node id="n1::n6">
+          <data key="d4"><![CDATA[.\skillDescriptions\Toe Stop Hurdle Jump.html]]></data>
           <data key="d6">
             <y:ShapeNode>
               <y:Geometry height="68.103515625" width="86.701171875" x="1935.1875093005951" y="-2082.517578125"/>
@@ -1303,6 +1303,7 @@ hurdle jump
           </data>
         </node>
         <node id="n1::n8">
+          <data key="d4"><![CDATA[.\skillDescriptions\Outside Dip.html]]></data>
           <data key="d6">
             <y:ShapeNode>
               <y:Geometry height="38.701171875" width="84.703125" x="3203.311929563492" y="-1862.7646484375"/>
@@ -2717,7 +2718,6 @@ Crossovers<y:LabelModel>
       </data>
     </edge>
     <edge id="e26" source="n0::n2::n2" target="n1::n3">
-      <data key="d9"/>
       <data key="d10">
         <y:PolyLineEdge>
           <y:Path sx="-27.18164062500003" sy="-19.3505859375" tx="3.552713678800501E-15" ty="19.3505859375">
@@ -2731,7 +2731,6 @@ Crossovers<y:LabelModel>
       </data>
     </edge>
     <edge id="e27" source="n0::n1::n2" target="n1::n0::n1">
-      <data key="d9"/>
       <data key="d10">
         <y:PolyLineEdge>
           <y:Path sx="-38.85498046875" sy="-26.701171875" tx="-15.67236328125" ty="19.3505859375">
@@ -2747,7 +2746,6 @@ Crossovers<y:LabelModel>
       </data>
     </edge>
     <edge id="e28" source="n0::n1::n2" target="n1::n0::n2">
-      <data key="d9"/>
       <data key="d10">
         <y:PolyLineEdge>
           <y:Path sx="38.85498046875" sy="-26.701171875" tx="-37.123046875" ty="19.3505859375">
@@ -2761,7 +2759,6 @@ Crossovers<y:LabelModel>
       </data>
     </edge>
     <edge id="n1::e5" source="n1::n11" target="n1::n0::n1">
-      <data key="d9"/>
       <data key="d10">
         <y:PolyLineEdge>
           <y:Path sx="42.684375" sy="-19.3505859375" tx="-47.01708984375" ty="19.3505859375">
