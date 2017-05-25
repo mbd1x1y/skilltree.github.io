@@ -433,7 +433,7 @@ Toe Stop<y:LabelModel>
               </data>
             </node>
             <node id="n0::n2::n3">
-              <data key="d4"><![CDATA[.\skillDescriptions\One-Foot Plow Stop.html]]></data>
+              <data key="d4"><![CDATA[.\skillDescriptions\One-Foot Plow Stops.html]]></data>
               <data key="d6">
                 <y:ShapeNode>
                   <y:Geometry height="53.40234375" width="84.029296875" x="1764.7682880704365" y="-764.03759765625"/>
@@ -574,7 +574,7 @@ Plow Stop<y:LabelModel>
               </data>
             </node>
             <node id="n0::n3::n3">
-              <data key="d4"><![CDATA[.\skillDescriptions\Weaving Around Obstacles.html]]></data>
+              <data key="d4"><![CDATA[.\skillDescriptions\Weaving Around Moving Obstacles.html]]></data>
               <data key="d6">
                 <y:ShapeNode>
                   <y:Geometry height="53.40234375" width="119.373046875" x="240.7353019593254" y="-549.2587890625"/>
@@ -718,7 +718,7 @@ a Turn-Around Toe Stop<y:LabelModel>
               </data>
             </node>
             <node id="n0::n4::n3">
-              <data key="d4"><![CDATA[.\skillDescriptions\Consecutive Knee Taps.html]]></data>
+              <data key="d4"><![CDATA[.\skillDescriptions\Consecutive Single Knee Taps.html]]></data>
               <data key="d6">
                 <y:ShapeNode>
                   <y:Geometry height="53.40234375" width="126.7265625" x="1172.8129092261904" y="-946.7646484375"/>
