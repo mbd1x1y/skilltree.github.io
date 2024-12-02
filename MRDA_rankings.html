@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Roller Derby Ranks</title>
+    <link rel="stylesheet" href="https://pyscript.net/latest/pyscript.css" />
+    <script defer src="https://pyscript.net/latest/pyscript.js"></script>
+</head>
+<body>
+    <h1>Roller Derby Rankings</h1>
+    <p>Select a date to compute rankings:</p>
+    <input type="date" id="date-input" />
+    <button onclick="submitDate()">Submit Date</button>
+
+    <div id="output"></div>
+
+    <py-script>
+        from datetime import datetime
+        from dateutil.relativedelta import relativedelta
+        from GameList import games
+        from dicts import initial_ratings, team_names, gamecount_active, team_gp_dict
+        import pprint
+
+        class RollerDerbyRanks:
+            def __init__(self, initial_ratings=None):
+                self.ratings = initial_ratings if initial_ratings else {}
+                self.gamecount = gamecount_active
+
+            def add_team(self, team_name, initial_rating=400):
+                if team_name not in self.ratings:
+                    self.ratings[team_name] = initial_rating
+
+            def compute_gpf(self, team_gp_dict, game_d):
+                for team in team_gp_dict:
+                    gp = 1
+                    gcount = 0
+                    if len(team_gp_dict[team]) > 0:
+                        exp = 0
+                        for x in team_gp_dict[team]:
+                            delta = (game_d - x[0]).days
+                            if delta >= 365:
+                                continue
+                            elif 183 <= delta < 270:
+                                wt = 0.5
+                            elif 271 <= delta < 365:
+                                wt = 0.25
+                            else:
+                                wt = 1
+
+                            if x[4] != 1:
+                                gp_weighted = x[4] ** wt
+                                gp *= gp_weighted
+                                exp += wt
+
+                            try:
+                                power = 1 / exp
+                            except ZeroDivisionError:
+                                power = 0
+
+                            gpf = pow(gp, power)
+                            self.ratings[team] = gpf
+                            gcount += 1
+
+                    self.gamecount[team] = gcount
+
+            def update_ratings(self, g):
+                for game in g:
+                    gdate, team_a, score_a, team_b, score_b = game
+                    self.add_team(team_a)
+                    self.add_team(team_b)
+
+                    game_d = datetime.strptime(gdate, '%Y-%m-%d').date()
+                    if game_d > date_query:
+                        continue
+
+                    ra = self.ratings[team_a]
+                    rb = self.ratings[team_b]
+
+                    ea = ra / rb
+                    ea = min(max(ea, 0.33), 3)
+                    eb = rb / ra
+                    eb = min(max(eb, 0.33), 3)
+
+                    if score_a == 0 or score_b == 0:
+                        continue
+
+                    sa = min(max(score_a / score_b, 0.33), 3)
+                    sb = min(max(score_b / score_a, 0.33), 3)
+
+                    gpa = ra * min(3, (sa / ea))
+                    gpb = rb * min(3, (sb / eb))
+
+                    team_gp_dict[team_a].append((game_d, f"{score_a} vs {score_b} {team_b}", ea, sa, gpa))
+                    team_gp_dict[team_b].append((game_d, f"{score_b} vs {score_a} {team_a}", eb, sb, gpb))
+
+                self.compute_gpf(team_gp_dict, game_d)
+
+            def get_rating(self, team_name):
+                return self.ratings.get(team_name, "Team not found")
+
+        def submitDate():
+            global date_query
+            date_input = document.getElementById("date-input").value
+            if not date_input:
+                document.getElementById("output").innerText = "Please select a valid date."
+                return
+            date_query = datetime.strptime(date_input, '%Y-%m-%d').date()
+
+            rank = RollerDerbyRanks(initial_ratings)
+            for gameday in games:
+                if datetime.strptime(gameday[0][0], '%Y-%m-%d').date() < date_query:
+                    rank.update_ratings(gameday)
+            rank.compute_gpf(team_gp_dict, date_query)
+
+            sorted_ratings = sorted(rank.ratings.items(), key=lambda item: item[1], reverse=True)
+            output = f"<h2>Rankings as of {date_query}</h2><table><tr><th>Position</th><th>Team</th><th>GPA</th></tr>"
+            position = 1
+            for code, rating in sorted_ratings:
+                if gamecount_active[code] > 2:
+                    full_name = team_names.get(code, "Unknown Team")
+                    output += f"<tr><td>{position}</td><td>{full_name}</td><td>{rating:.2f}</td></tr>"
+                    position += 1
+            output += "</table>"
+            document.getElementById("output").innerHTML = output
+    </py-script>
+</body>
+</html>
